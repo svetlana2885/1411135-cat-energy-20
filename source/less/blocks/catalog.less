@@ -1,45 +1,74 @@
-.catalog__list {
+.catalog {
+  padding-top: 28px;
+}
 
-  display: flex;
-  flex-direction: column;
+.catalog__list {
+  list-style: none;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .catalog__item {
+  background-color: @basic_grey;
+  height: 266px;
+}
+
+.catalog__title {
+  display: flex;
+  align-items: center;
   position: relative;
-  background: #f2f2f2;
-  height: 270px;
-  margin: 20px 0 20px 0;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 24px;
+  line-height: 37px;
+  padding-left: 40px;
+  padding-top: 30px;
+
+
+  &::before {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: #68b738;
+    border-radius: 50%;
+    margin-right: 19px;
+  }
 }
 
 .catalog__item--slim {
-  background-image: url("./../img/icon-cat-slim.svg");
-  background-repeat: no-repeat;
-  background-size: 50px 53px;
-  background-position: 5% 8%;
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 36px;
+    height: 50px;
+    position: absolute;
+    background-image: url("./../img/icon-cat-slim.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    top: 25px;
+    left: 50px;
+  }
 }
 
 .catalog__item--weight {
-  background-image: url("./../img/icon-cat-pro.svg");
-  background-repeat: no-repeat;
-  background-size: 50px 53px;
-  background-position: 2% 8%;
-
-}
+  position: relative;
 
 
-.catalog__title {
-  font-family: "Oswald";
-  font-style: normal;
-  font-weight: normal;
-  font-size: 24px;
-  line-height: 37px;
-  text-transform: uppercase;
-  text-align: center;
-
-  padding-left: 15px;
-
-  padding-top: 30px;
-
+  &::after {
+    content: "";
+    display: block;
+    width: 68px;
+    height: 28px;
+    position: absolute;
+    background-image: url("./../img/icon-cat-pro.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    top: 40px;
+    left: 26px;
+  }
 }
 
 .catalog__discription {
@@ -48,33 +77,35 @@
   font-weight: normal;
   font-size: 14px;
   line-height: 18px;
-  padding-left: 20px;
-  padding-right: 30px;
   border-bottom: solid 1px #d9d9d9;
   padding-bottom: 26px;
   color: @special_dark-grey;
+  padding-left: 20px;
+  padding-right: 33px;
 }
 
 .catalog__link {
- position: absolute;
-  bottom: 0;
-  padding-bottom: 30px;
-  width: 150px;
-  font-family: "Oswald";
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 16px;
+  display: flex;
+  position: relative;
   text-transform: uppercase;
   list-style: none;
   text-decoration: none;
   color: #000000;
   padding-left: 20px;
-  background-image: url("./../img/icon-right-arrow-long.svg");
-  background-repeat: no-repeat;
-  background-size: 14px 10px;
-  background-position: 95% 10%;
 
+
+  &::after {
+    content: "";
+    display: block;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    background-image: url("./../img/icon-right-arrow-long.svg");
+    top: 5px;
+    left: 110px;
+    width: 30px;
+    height: 10px;
+  }
 }
 
 .catalog-product {
@@ -90,9 +121,6 @@
 .catalog-product__title {
   text-decoration: none;
   color: @special_dark-grey-2;
-  font-family: "Oswald";
-  font-style: normal;
-  font-weight: normal;
   font-size: 16px;
   line-height: 20px;
 }
@@ -115,9 +143,9 @@
   .catalog__item {
     display: flex;
     flex-direction: column;
-    height: 372px;
     margin-top: 30px;
     position: relative;
+    height: 372px;
   }
 
   .catalog__list {
@@ -126,44 +154,116 @@
   }
 
   .catalog__title {
-    text-align: left;
-    padding-left: 53px;
+    display: flex;
+    position: relative;
+
+
+    &::before {
+      content: "";
+      display: block;
+      width: 100px;
+      height: 100px;
+      background-color: #68b738;
+      border-radius: 50%;
+      margin-left: 20px;
+    }
   }
 
   .catalog__discription {
     text-align: left;
-    padding-left: 52px;
     border-bottom: none;
-    max-width: 377px;
-  }
-
-  .catalog__link {
-    width: 150px;
-    padding-left: 57px;
-    position: absolute;
-    bottom: 0;
-    padding-bottom: 57px;
-    background-image: url("./../img/icon-right-arrow-long.svg");
-    background-repeat: no-repeat;
-    background-size: 32px 10px;
-    background-position: 100% 5%;
-  }
-
-  .catalog__item--slim {
-    height: 372px;
-    background: @basic_grey;
-    background-image: url("./../img/icon-cat-slim.svg");
-    background-repeat: no-repeat;
-    background-size: 200px 211px;
-    background-position: 90% 50%;
-  }
-
-  .catalog__item--weight {
-    height: 372px;
-    background-image: url("./../img/icon-cat-pro.svg");
-    background-repeat: no-repeat;
-    background-size: 268px 200px;
-    background-position: 90% 50%;
   }
 }
 
+@media (min-width: @desktop-width) {
+  .catalog__list {
+    display: grid;
+    column-gap: 80px;
+    grid-template-columns: 1fr 1fr;
+    height: 374px;
+    padding-left: 110px;
+    padding-right: 110px;
+  }
+
+
+  .catalog__item {
+    height: 374px;
+  }
+
+  .catalog__title {
+    &::before {
+      content: "";
+      display: block;
+      width: 100px;
+      height: 100px;
+      background-color: #68b738;
+      border-radius: 50%;
+      margin-right: 45px;
+    }
+  }
+
+  .catalog__item--slim {
+    position: relative;
+
+
+    &::after {
+      content: "";
+      display: block;
+      width: 70px;
+      height: 98px;
+      position: absolute;
+      background-image: url("./../img/icon-cat-slim.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      top: 45px;
+      left: 80px;
+    }
+  }
+
+  .catalog__item--weight {
+    position: relative;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 134px;
+      height: 56px;
+      position: absolute;
+      background-image: url("./../img/icon-cat-pro.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      top: 70px;
+      left: 40px;
+    }
+  }
+
+  .catalog__discription {
+    font-family: "Arial";
+    margin-right: 50px;
+    margin-left: 60px;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 0;
+  }
+
+  .catalog__link {
+    position: relative;
+    font-size: 20px;
+    line-height: 30px;
+    padding-top: 26px;
+    padding-left: 52px;
+
+    &::after {
+      content: "";
+      display: block;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: absolute;
+      background-image: url("./../img/icon-right-arrow-long.svg");
+      top: 35px;
+      left: 180px;
+      width: 30px;
+      height: 10px;
+    }
+  }
+}
