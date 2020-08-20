@@ -2,12 +2,6 @@
   min-height: 100%;
 }
 
-.logo__img {
-  margin: 0 auto;
-  padding-top: 12px;
-  width: 280px;
-  height: 37px;
-}
 
 .page-header {
   padding-left: 20px;
@@ -37,18 +31,13 @@
   }
 
 
-  .main-nav__list {
-    display: flex;
-  }
-
-  .logo__img {
-    padding-top: 50px;
-    width: 202px;
-  }
-
   .page-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 300px;
     position: absolute;
     z-index: 1;
     height: 150px;
+    margin: 0;
   }
 }

@@ -8,6 +8,7 @@
 
 
 .promo__text {
+  font-weight: normal;
   font-size: 36px;
   line-height: 36px;
   color: #ffffff;
@@ -62,11 +63,8 @@
 
 @media (min-width: @desktop-width) {
   .promo {
-    .page-wrapper() {
-      padding-right: calc(50% - 625px);
-      padding-left: calc(50% - 625px);
-    }
-
+    padding-right: calc(50% - 625px);
+    padding-left: calc(50% - 625px);
     position: relative;
     height: 700px;
     background-image: url("./../img/index-background-desktop@1x.jpg");
@@ -77,16 +75,16 @@
 
   .promo__text {
     text-align: left;
-    margin-left: 190px;
     font-size: 60px;
     line-height: 60px;
     width: 414px;
     padding-top: 223px;
+    margin: 0;
   }
 
   .promo__caption {
     text-align: left;
-    margin-left: 190px;
+    margin: 0;
     padding-left: 0;
   }
 
