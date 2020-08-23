@@ -1,6 +1,7 @@
 .promo {
   background-image: url("./../img/index-background-mobile@1x.jpg");
   background-repeat: no-repeat;
+  background-size: contain;
   position: relative;
   padding-left: 20px;
   padding-right: 20px;
@@ -29,11 +30,19 @@
   padding-top: 25px;
 }
 
+.promo__button {
+  text-transform: uppercase;
+  position: absolute;
+  padding: 7px 64px 7px 64px;
+  left: 20px;
+}
+
 
 @media (min-width: @tablet-width) {
   .promo {
     background: #ffffff;
     position: relative;
+    background-size: contain;
   }
 
   .promo__img {
@@ -58,6 +67,12 @@
     text-align: left;
     padding-left: 90px;
     padding-top: 40px;
+  }
+
+  .promo__button {
+    top: 250px;
+    left: 90px;
+    padding: 14px 26px 14px 26px;
   }
 }
 
@@ -88,16 +103,17 @@
     padding-left: 0;
   }
 
-  .promo__button {
-    text-align: center;
-    top: 400px;
-  }
-
   .promo__img {
     top: 170px;
     position: absolute;
     width: 552px;
     height: 499px;
     left: 600px;
+  }
+
+  .promo__button {
+    position: absolute;
+    top: 450px;
+    left: 130px;
   }
 }
