@@ -11,7 +11,7 @@
     <a class="page-header__logo logo" href="#">
       <img class="logo__img" src="img/logo-mobile.svg" width="280px" height="37px"  alt="логотип" />
     </a>
-    <nav class="main-nav">
+    <nav class="main-nav main-nav--opened nav--nojs ">
       <button class="main-nav__toggle" type="button">
         <span class="visually-hidden"> открыть меню </span>
       </button>
@@ -45,5 +45,20 @@
       <img class="copyright__img" src="img/htmlacademy.svg" width="28px" height="34px"  alt="логотип" />
     </div>
   </footer>
+  <script>
+    var navMain = document.querySelector('.main-nav');
+    var navToggle = document.querySelector('.main-nav__toggle');
+    navMain.classList.remove('main-nav--nojs');
+    navToggle.addEventListener('click', function() {
+    if (navMain.classList.contains('main-nav--closed')) {
+        navMain.classList.remove('main-nav--closed');
+        navMain.classList.add('main-nav--opened');
+        }
+        else {
+        navMain.classList.add('main-nav--closed');
+        navMain.classList.remove('main-nav--opened');
+        }
+      });
+  </script>
 </body>
 </html>

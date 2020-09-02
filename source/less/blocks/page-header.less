@@ -1,0 +1,30 @@
+.page-header {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+@media (min-width: @tablet-width) {
+  .page-header {
+    display: flex;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .page-header__logo {
+    height: 66px;
+    padding-top: 22px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .page-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 280px;
+    position: absolute;
+    z-index: 1;
+    padding-top: 70px;
+    height: 150px;
+    margin: 0;
+  }
+}
